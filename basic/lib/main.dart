@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 //main(), runApp() 앞에 소문자는 함수
 //MyApp() 앞에 대문자는 위젯이 클래스와 관련이 있다
-void main() => runApp(MyApp());
+void main() => runApp(
+    MyApp()); //앱의 시작점(컴파일러가 우리가 작성한 코딩을 컴퓨터가 이해할수있는 언어로 바꾸는 작업을할때 가장먼저 참조)  runApp함수는 플러터의 최상위함수
 
 class MyApp extends StatelessWidget {
   //최상위 위젯 앱의 레이아웃을 만드는 역할, 정적 stateless여야함
