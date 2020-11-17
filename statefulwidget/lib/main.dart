@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   int counter = 0;
 
   @override
@@ -19,16 +27,34 @@ class MyApp extends StatelessWidget {
               Text(
                 '$counter',
                 style: TextStyle(fontSize: 40.0),
-              )
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                      child: Icon(Icons.add),
+                      onPressed: () {
+                        setState(() {
+                          counter++;
+                          print('$counter');
+                        });
+                      }),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  FloatingActionButton(
+                      child: Icon(Icons.remove),
+                      onPressed: () {
+                        setState(() {
+                          counter--;
+                          print('$counter');
+                        });
+                      })
+                ],
+              ),
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {
-              counter++;
-              print('$counter');
-            }),
       ),
     );
   }

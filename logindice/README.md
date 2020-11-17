@@ -1,4 +1,4 @@
-# login_dice
+# logindice
 
 A new Flutter project.
 
